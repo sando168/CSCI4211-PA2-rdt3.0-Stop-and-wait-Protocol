@@ -52,9 +52,9 @@ The receiver code is even simpler. The receiver will check if the packet receive
 ### Evaluation
 #### Test Cases:
 ##### No lost packets, no corrupted packets
-Edit simulator.java variables lossprob = (float) 0.0 and corruptprob = (float) 0.0
+Edit simulator.java variables lossprob = (float) 0.0 and corruptprob = (float) 0.0.
 
-No lost or corrupted packets, so all messages should be received correctly
+No lost or corrupted packets, so all messages should be received correctly.
 Console Output:
 
     recieving aaaaaaaaaaaaaaaaaaaa
@@ -79,11 +79,11 @@ Console Output:
     The simulator has sent enough packets. Simulation end
 
 ##### Packets lost, no corrupted packets**
-Edit simulator.java variables lossprob = (float) 0.2 and corruptprob = (float) 0.0
+Edit simulator.java variables lossprob = (float) 0.2 and corruptprob = (float) 0.0.
 
 ##### No lost packets, packets corrupted**
-Edit simulator.java variables lossprob = (float) 0.0 and corruptprob = (float) 0.2
+Edit simulator.java variables lossprob = (float) 0.0 and corruptprob = (float) 0.2.
 
 ##### Packets lost, packets corrupted**
-Edit simulator.java variables lossprob = (float) 0.2 and corruptprob = (float) 0.2
+Edit simulator.java variables lossprob = (float) 0.2 and corruptprob = (float) 0.2.
     
