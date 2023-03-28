@@ -20,7 +20,7 @@ Java, A.java B.java,, simulator.java
 
 ## Execution/Running
 1. Run "java simulator" in the command line
-The simulator will immediately start providing the sender A with message data to send
+2. The simulator will immediately start providing the sender A with message data to send
 
 ## Description
 This Java code implements the rdt3.0 stop-and-wait Reliable Data Transfer protocol. A.java contains code for the sender and B.java contains code for the receiver. The file simulator.java contains code that will simulate layer 5 sending/receiving data to the sender/receiver as well as a layer 3 channel in which the probability of a packet being dropped or corrupted can be adjusted.
@@ -50,8 +50,8 @@ The receiver code is even simpler. The receiver will check if the packet receive
     This function will check if the packet received is not corrupted and expected. If so, it will send the payload of the packet to the simulated layer 5 and send an ACK to the sender. If not, it will send a NAK to the sender.
 
 ### Evaluation
-#### Test Cases
-**No lost packets, no corrupted packets**
+#### Test Cases:
+##### No lost packets, no corrupted packets
 Edit simulator.java variables lossprob = (float) 0.0 and corruptprob = (float) 0.0
 
 No lost or corrupted packets, so all messages should be received correctly
@@ -78,12 +78,12 @@ Console Output:
     recieving ssssssssssssssssssss
     The simulator has sent enough packets. Simulation end
 
-**Packets lost, no corrupted packets**
+##### Packets lost, no corrupted packets**
 Edit simulator.java variables lossprob = (float) 0.2 and corruptprob = (float) 0.0
 
-**No lost packets, packets corrupted**
+##### No lost packets, packets corrupted**
 Edit simulator.java variables lossprob = (float) 0.0 and corruptprob = (float) 0.2
 
-**Packets lost, packets corrupted**
+##### Packets lost, packets corrupted**
 Edit simulator.java variables lossprob = (float) 0.2 and corruptprob = (float) 0.2
     
