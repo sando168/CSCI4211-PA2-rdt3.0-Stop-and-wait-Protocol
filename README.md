@@ -51,7 +51,7 @@ The receiver code is even simpler. The receiver will check if the packet receive
 
 ### Evaluation
 #### Test Cases:
-##### **No lost packets, no corrupted packets**
+##### No lost packets, no corrupted packets
 Edit simulator.java variables **lossprob** = 0.0 and **corruptprob** = 0.0.
 No lost or corrupted packets, so all messages should be received correctly.
 Console Output:
@@ -77,7 +77,7 @@ Console Output:
     recieving ssssssssssssssssssss
     The simulator has sent enough packets. Simulation end
 
-##### **Packets lost, no corrupted packets**
+##### Packets lost, no corrupted packets
 Edit simulator.java variables **lossprob** = 0.9 and **corruptprob** = 0.0.
 stop-and-wait protocol completely recovers from packet loss by resending packet after timer expires and/or sending NAK packets.
 Console Output:
@@ -103,9 +103,9 @@ Console Output:
     recieving ssssssssssssssssssss
     The simulator has sent enough packets. Simulation end
 
-##### **No lost packets, packets corrupted**
+##### No lost packets, packets corrupted
 Edit simulator.java variables **lossprob** = 0.0 and **corruptprob** = 0.8.
-stop-and-wait protocol will competely recover from corrupted packets up until corruptprob of 0.7. After that, the window starts to fill up and drop packets, so the message received is incomplete.
+stop-and-wait protocol will competely recover from corrupted packets up until corruptprob of 0.7. After that, the window starts to fill up and drop packets, so the message received is incomplete. Here packets o and p are missing.
 Console Output:
 
     recieving aaaaaaaaaaaaaaaaaaaa
@@ -127,9 +127,9 @@ Console Output:
     recieving ssssssssssssssssssss
     The simulator has sent enough packets. Simulation end
 
-##### **Packets lost, packets corrupted**
+##### Packets lost, packets corrupted
 Edit simulator.java variables **lossprob** = 0.9 and **corruptprob** = 0.8.
-Again message recovery is dependent on the corruptprob variable because the window start to fill up and drop packets.
+Again message recovery is dependent on the corruptprob variable because the window start to fill up and drop packets. Here packets a and b are missing.
 Console Output:
 
     recieving cccccccccccccccccccc
