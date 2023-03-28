@@ -79,7 +79,7 @@ Console Output:
 
 ##### Packets lost, no corrupted packets
 Edit simulator.java variables **lossprob** = 0.9 and **corruptprob** = 0.0.
-stop-and-wait protocol completely recovers from packet loss by resending packet after timer expires and/or sending NAK packets.
+stop-and-wait protocol completely recovers from packet loss by resending the lost packet after the timer expires and/or sending NAK packets.
 Console Output:
 
     recieving aaaaaaaaaaaaaaaaaaaa
