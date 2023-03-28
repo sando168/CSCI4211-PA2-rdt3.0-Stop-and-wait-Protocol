@@ -51,9 +51,8 @@ The receiver code is even simpler. The receiver will check if the packet receive
 
 ### Evaluation
 #### Test Cases:
-##### No lost packets, no corrupted packets
+##### **No lost packets, no corrupted packets**
 Edit simulator.java variables **lossprob** = 0.0 and **corruptprob** = 0.0.
-
 No lost or corrupted packets, so all messages should be received correctly.
 Console Output:
 
@@ -78,12 +77,76 @@ Console Output:
     recieving ssssssssssssssssssss
     The simulator has sent enough packets. Simulation end
 
-##### Packets lost, no corrupted packets**
-Edit simulator.java variables lossprob = 0.2 and corruptprob = 0.0.
+##### **Packets lost, no corrupted packets**
+Edit simulator.java variables **lossprob** = 0.9 and **corruptprob** = 0.0.
+stop-and-wait protocol completely recovers from packet loss by resending packet after timer expires and/or sending NAK packets.
+Console Output:
 
-##### No lost packets, packets corrupted**
-Edit simulator.java variables lossprob = 0.0 and corruptprob = 0.2.
+    recieving aaaaaaaaaaaaaaaaaaaa
+    recieving bbbbbbbbbbbbbbbbbbbb
+    recieving cccccccccccccccccccc
+    recieving dddddddddddddddddddd
+    recieving eeeeeeeeeeeeeeeeeeee
+    recieving ffffffffffffffffffff
+    recieving gggggggggggggggggggg
+    recieving hhhhhhhhhhhhhhhhhhhh
+    recieving iiiiiiiiiiiiiiiiiiii
+    recieving jjjjjjjjjjjjjjjjjjjj
+    recieving kkkkkkkkkkkkkkkkkkkk
+    recieving llllllllllllllllllll
+    recieving mmmmmmmmmmmmmmmmmmmm
+    recieving nnnnnnnnnnnnnnnnnnnn
+    recieving oooooooooooooooooooo
+    recieving pppppppppppppppppppp
+    recieving qqqqqqqqqqqqqqqqqqqq
+    recieving rrrrrrrrrrrrrrrrrrrr
+    recieving ssssssssssssssssssss
+    The simulator has sent enough packets. Simulation end
 
-##### Packets lost, packets corrupted**
-Edit simulator.java variables lossprob = 0.2 and corruptprob = 0.2.
-    
+##### **No lost packets, packets corrupted**
+Edit simulator.java variables **lossprob** = 0.0 and **corruptprob** = 0.8.
+stop-and-wait protocol will competely recover from corrupted packets up until corruptprob of 0.7. After that, the window starts to fill up and drop packets, so the message received is incomplete.
+Console Output:
+
+    recieving aaaaaaaaaaaaaaaaaaaa
+    recieving bbbbbbbbbbbbbbbbbbbb
+    recieving cccccccccccccccccccc
+    recieving dddddddddddddddddddd
+    recieving eeeeeeeeeeeeeeeeeeee
+    recieving ffffffffffffffffffff
+    recieving gggggggggggggggggggg
+    recieving hhhhhhhhhhhhhhhhhhhh
+    recieving iiiiiiiiiiiiiiiiiiii
+    recieving jjjjjjjjjjjjjjjjjjjj
+    recieving kkkkkkkkkkkkkkkkkkkk
+    recieving llllllllllllllllllll
+    recieving mmmmmmmmmmmmmmmmmmmm
+    recieving nnnnnnnnnnnnnnnnnnnn
+    recieving qqqqqqqqqqqqqqqqqqqq
+    recieving rrrrrrrrrrrrrrrrrrrr
+    recieving ssssssssssssssssssss
+    The simulator has sent enough packets. Simulation end
+
+##### **Packets lost, packets corrupted**
+Edit simulator.java variables **lossprob** = 0.9 and **corruptprob** = 0.8.
+Again message recovery is dependent on the corruptprob variable because the window start to fill up and drop packets.
+Console Output:
+
+    recieving cccccccccccccccccccc
+    recieving dddddddddddddddddddd
+    recieving eeeeeeeeeeeeeeeeeeee
+    recieving ffffffffffffffffffff
+    recieving gggggggggggggggggggg
+    recieving hhhhhhhhhhhhhhhhhhhh
+    recieving iiiiiiiiiiiiiiiiiiii
+    recieving jjjjjjjjjjjjjjjjjjjj
+    recieving kkkkkkkkkkkkkkkkkkkk
+    recieving llllllllllllllllllll
+    recieving mmmmmmmmmmmmmmmmmmmm
+    recieving nnnnnnnnnnnnnnnnnnnn
+    recieving oooooooooooooooooooo
+    recieving pppppppppppppppppppp
+    recieving qqqqqqqqqqqqqqqqqqqq
+    recieving rrrrrrrrrrrrrrrrrrrr
+    recieving ssssssssssssssssssss
+    The simulator has sent enough packets. Simulation end
